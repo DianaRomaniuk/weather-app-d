@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- axios -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <title>WeatherAppDi</title>
+
+    <!-- CSS only -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+      crossorigin="anonymous"
+    />
+
+    <!-- styles.css -->
+    <link rel="stylesheet" href="src/styles.css" />
+
+    <!-- FontAwesome -->
+    <script
+      src="https://kit.fontawesome.com/9c33154dca.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <section class="main">
+      <section class="weatherapp">
+        <div class="container">
+          <div class="row">
+            <!-- First container -->
+            <div class="col-sm-8 container-first">
+              <form id="formaa">
+                <!-- First Container // First Row -->
+                <div class="row form-group">
+                  <div class="col-sm-6 form-group-item" id="form-group-item">
+                    <input
+                      type="text"
+                      class="form-control"
+                      placeholder="Enter your city"
+                      id="form-input"
+                    />
+                  </div>
+
+                  <div class="col-sm-3 form-group-item">
+                    <input type="submit" value="Search" class="search-btn" />
+                  </div>
+                  <div class="col-sm-3 form-group-item">
+                    <button class="current-btn" id="current-btn">
+                      Current
+                    </button>
+                  </div>
+                </div>
+              </form>
+
+              <!-- First Container // Second Row // Today Weather -->
+              <div class="row today-weather">
+                <div class="col-6 col-md today-weather-item">
+                  <h1 id="heading">Kyiv</h1>
+                  <p class="today-weather-item-day-hour">
+                    <!-- Today </br> -->
+                    <span id="today-weather-item-day-hour"> Friday 20:00 </span>
+                  </p>
+                  <p class="weather-description" id="weather-description">
+                    Sunny
+                  </p>
+                </div>
+                <div class="col-6 col-md today-weather-item test-second">
+                  <img src="img/sun.png" class="sun-icon" width="50%" />
+                  <p class="current-temp p-3">
+                    <span class="temperature" id="today-temperature">25</span>
+                    <span class="units">
+                      <a href="#" id="celsius-link"> °C </a> |
+                      <a href="#" id="fahrenheit-link"> F </a>
+                    </span>
+                  </p>
+                </div>
+                <div class="col-6 col-md today-weather-item">
+                  <p>
+                    Feels like: <span id="tempFeels">21</span><span>°C</span>
+                  </p>
+                  <p>Humadity: <span id="humidity"> 60 </span><span>%</span></p>
+                  <p>Wind: <span id="windSpeed">7</span> <span>km/h</span></p>
+                </div>
+              </div>
+              <!-- First Container // Third Row // Hour Weather Today  -->
+              <div class="row hour-weather">
+                <div class="col-6 col-md hour-weather-card">
+                  <p class="hour-weather-card-item">10:00</p>
+                  <img
+                    src="img/sun.png"
+                    class="today-icon hour-weather-card-item"
+                    width="30px"
+                  />
+                  <p class="today-temp hour-weather-card-item">+17° C</p>
+                </div>
+                <div class="col-6 col-md hour-weather-card">
+                  <p class="hour-weather-card-item">13:00</p>
+                  <img
+                    src="img/sun.png"
+                    class="today-icon hour-weather-card-item"
+                    width="30px"
+                  />
+                  <p class="today-temp hour-weather-card-item">+19° C</p>
+                </div>
+                <div class="col-6 col-md hour-weather-card">
+                  <p class="hour-weather-card-item">15:00</p>
+                  <img
+                    src="img/sun.png"
+                    class="today-icon hour-weather-card-item"
+                    width="30px"
+                  />
+                  <p class="today-temp hour-weather-card-item">+22° C</p>
+                </div>
+                <div class="col-6 col-md hour-weather-card">
+                  <p class="hour-weather-card-item">18:00</p>
+                  <img
+                    src="img/cloudy.png"
+                    class="today-icon hour-weather-card-item"
+                    width="30px"
+                  />
+                  <p class="today-temp hour-weather-card-item">+21° C</p>
+                </div>
+                <div class="col-6 col-md hour-weather-card">
+                  <p class="hour-weather-card-item">21:00</p>
+                  <img
+                    src="img/cloudy.png"
+                    class="today-icon hour-weather-card-item"
+                    width="30px"
+                  />
+                  <p class="today-temp hour-weather-card-item">+17° C</p>
+                </div>
+                <div class="col-6 col-md hour-weather-card">
+                  <p class="hour-weather-card-item">00:00</p>
+                  <img
+                    src="img/cloudy.png"
+                    class="today-icon hour-weather-card-item"
+                    width="30px"
+                  />
+                  <p class="today-temp hour-weather-card-item">+16° C</p>
+                </div>
+              </div>
+            </div>
+            <!-- Second Container -->
+            <div class="col-sm-3 container-second">
+              <ul class="container-ul">
+                <li class="forecast-item">
+                  <div class="item-info">
+                    <p class="day-item-info">Saturday</p>
+                    <p class="temp-item-info">+21° C</p>
+                  </div>
+                  <img src="img/sun.png" class="icon-item-info" width="35" />
+                </li>
+                <li class="forecast-item">
+                  <div class="item-info">
+                    <p class="day-item-info">Sunday</p>
+                    <p class="temp-item-info">+21° C</p>
+                  </div>
+                  <img src="img/cloudy.png" class="icon-item-info" width="35" />
+                </li>
+                <li class="forecast-item">
+                  <div class="item-info">
+                    <p class="day-item-info">Monday</p>
+                    <p class="temp-item-info">+20° C</p>
+                  </div>
+                  <img src="img/cloudy.png" class="icon-item-info" width="35" />
+                </li>
+                <li class="forecast-item">
+                  <div class="item-info">
+                    <p class="day-item-info">Tuesday</p>
+                    <p class="temp-item-info">+17° C</p>
+                  </div>
+                  <img src="img/rain.png" class="icon-item-info" width="35" />
+                </li>
+                <li class="forecast-item">
+                  <div class="item-info">
+                    <p class="day-item-info">Wednesday</p>
+                    <p class="temp-item-info">+18° C</p>
+                  </div>
+                  <img src="img/cloudy.png" class="icon-item-info" width="35" />
+                </li>
+                <li class="forecast-item">
+                  <div class="item-info">
+                    <p class="day-item-info">Thursday</p>
+                    <p class="temp-item-info">+20° C</p>
+                  </div>
+                  <img src="img/sun.png" class="icon-item-info" width="35" />
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+    </section>
+    <script src="src/index.js"></script>
+  </body>
+</html>
