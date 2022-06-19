@@ -232,3 +232,11 @@ span {
 .icon-item-info {
   padding-right: 7px;
 }
+
+.source {
+  text-align: center;
+}
+
+.authorsname {
+  color: #f5a179;
+}
