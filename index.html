@@ -76,12 +76,19 @@
                   </p>
                 </div>
                 <div class="col-6 col-md today-weather-item test-second">
-                  <img src="img/sun.png" class="sun-icon" width="50%" />
+                  <!-- IMG TO CHANGE -->
+                  <img
+                    src="http://openweathermap.org/img/wn/01d@2x.png"
+                    alt=""
+                    class="main-icon"
+                    id="main-icon"
+                    width="50%"
+                  />
                   <p class="current-temp p-3">
                     <span class="temperature" id="today-temperature">25</span>
                     <span class="units">
-                      <a href="#" id="celsius-link"> °C </a> |
-                      <a href="#" id="fahrenheit-link"> F </a>
+                      <a href="#" id="celsius-link" class="active"> °C </a> |
+                      <a href="#" id="fahrenheit-link" class="active"> F </a>
                     </span>
                   </p>
                 </div>
@@ -203,9 +210,7 @@
       </section>
     </section>
     <p class="source">
-      <a href="https://github.com/DianaRomaniuk/weather-app-d.git"
-        >Open-source code</a
-      >,
+      <a href="">Open-source code</a>,
       <span class="authorsname">by Diana Romaniuk</span>
     </p>
     <script src="src/index.js"></script>
