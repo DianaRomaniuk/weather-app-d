@@ -46,8 +46,6 @@ h1 {
 }
 
 /* ---- First container (Today weather) ---- */
-/* .container-first {
-} */
 
 /* ---- First row in First Container (General) ---- */
 .form-group {
@@ -105,7 +103,6 @@ h1 {
   padding: 20px;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 10px;
   background-color: rgba(0, 118, 253, 0.1);
   border-radius: 10px;
   text-align: center;
@@ -146,13 +143,15 @@ a:hover {
   font-size: 22px;
 }
 
+.current-temp .active {
+  cursor: default;
+  color: white;
+}
+
 span {
   font-weight: 400;
   color: #ddefff;
 }
-
-/* .temperature {
-} */
 
 #celsius-link {
   text-decoration: none;
